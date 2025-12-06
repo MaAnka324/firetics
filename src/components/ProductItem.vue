@@ -13,8 +13,13 @@ defineProps<{ item: Product }>()
       <p class="desc">{{ item.description }}</p>
 
       <div class="row">
+        <div class="discount">Discount {{ item.discountPercentage }} %</div>
+        <div class="brand">{{ item.brand }}</div>
+      </div>
+      <div class="row">
         <div class="price">${{ item.price }}</div>
-        <div class="rating">★ 4.5</div>
+        <div class="rating">★ {{ item.rating }}</div>
+        <div class="category">{{ item.category }}</div>
       </div>
     </div>
   </div>
@@ -74,6 +79,25 @@ defineProps<{ item: Product }>()
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 13px;
+
+}
+.discount {
+  color: #e74c3c;
+  font-weight: 700;
+  font-size: 13px;
+}
+.brand {
+  color: #1b998b;
+  font-size: 13px;
+  margin-left: 8px;
+}
+.category {
+  background: #e6f7f7;
+  color: #0f3b3a;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-left: 8px;
 }
 
 </style>
